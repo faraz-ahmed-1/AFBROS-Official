@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFBROS - Home Page</title>
+
+<style>
+*{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.nav{
+    background-color: #42a5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* LOGO */
+.logo img{
+    width: 120px;
+    max-width: 100%;
+}
+
+/* LINKS */
+.links {
+    display: flex;
+    gap: 25px;
+}
+
+.links a{
+    color: white;
+    font-size: 18px;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+}
+
+/* MAIN BODY */
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-image: url(HelloBackground.jpg);
+    background-size: cover;
+    background-position: center;
+
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.mainBody h1{
+    font-size: 45px;
+    color: white;
+}
+
+.mainBody p{
+    font-size: 28px;
+    color: white;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer{
+    text-align: center;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px){
+
+    .hamburger{
+        display: flex;
+    }
+
+    .links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #42a5f5;
+        width: 100%;
+        text-align: center;
+    }
+
+    .links a{
+        padding: 15px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .links.active{
+        display: flex;
+    }
+
+    .mainBody h1{
+        font-size: 28px;
+    }
+
+    .mainBody p{
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+
+    <div class="logo">
+        <img src="Logo.png" alt="logo">
+    </div>
+
+    <div class="links" id="menu">
+        <a href="#">Home</a>
+        <a href="#">Donation</a>
+        <a href="#">Work</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
+<main class="mainBody">
+    <h1>Welcome to Our Community</h1>
+    <p>Together, let’s inspire change and create a brighter future.</p>
+</main>
+
+<footer>
+    <p>AFBROS - Trusted by Millions</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
